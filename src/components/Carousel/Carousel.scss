@@ -1,0 +1,28 @@
+.carousel{
+    width: calc(100% - 164px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    z-index: 0;
+    overflow: hidden;
+    >span {
+        font-size: 32px;
+    }
+    .carousel-item{
+        top: 12px;
+        .carouselItem{
+            transition: .2s;
+            height: 272px;
+            cursor: pointer;
+            img{
+                width: 200px;
+                height: 100%;
+                object-fit: cover;
+            }
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+}

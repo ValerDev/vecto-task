@@ -1,0 +1,151 @@
+@import '../../variables.scss';
+
+.sideBar {
+    display: flex;
+    width: 164px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    z-index: 2;
+    &:has(.sideMenuHover) {
+        width: max-content;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 35px 38px 0px;
+        cursor: pointer;
+        transition: .2s;
+        &:hover {
+            opacity: .8;
+        }
+
+        img {
+            width: 82px;
+            border-radius: 50%;
+        }
+
+        p {
+            font-size: 32px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+    }
+    .profile.hidden {
+        opacity: 0;
+    }
+    .sideMenu {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        transition: .3s;
+        padding: 0 38px;
+
+        .link {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 20px;
+            text-decoration: none;
+            transition: .2s;
+            .serchInput{
+                background: none;
+                height: 40px;
+                width: 65%;    
+                border: none;
+                outline: none;
+                font-size: 30px;
+                color: #ffffff;
+                border-bottom: 2px solid #fff;
+            }
+
+            .linkContent {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 45px;
+                width: 82px;
+                height: 82px;
+                border-radius: 50%;
+                overflow: hidden;
+                transition: .3s;
+
+                img {
+                    margin-left: 28px;
+                }
+
+                span {
+                    display: none;
+                    font-size: 36px;
+                    white-space: nowrap;
+                }
+            }
+
+        }
+
+        .link.active {
+            .linkContent {
+                background-color: $hover-color;
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .sideMenu.sideMenuHover {
+        width: 356px;
+
+        .link {
+            width: 100%;
+
+            .linkContent {
+                border-radius: 12px;
+                width: 100%;
+
+                &:hover {
+                    background-color: $hover-color;
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                span {
+                    display: unset;
+
+                }
+            }
+        }
+    }
+
+    .sideBarFooter {
+        position: relative;
+        z-index: 1;
+        padding-left: 60px;
+        transition: .2s;
+        margin-top: 100px;
+        .sideBarFooterItem {
+            width: max-content;
+            color: #858688;
+            cursor: pointer;
+            font-size: 24px;
+            letter-spacing: 4.8px;
+            white-space: nowrap;
+            line-height: 15px;
+            transition: .2s;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+    .sideBarFooter.hidden {
+        opacity: 0;
+    }
+}
